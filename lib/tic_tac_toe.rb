@@ -103,6 +103,9 @@ def play
       puts "Congratulations O"
     elsif draw == true
       puts "Cat's Game!"
+    end
+  end
+end
 
 
 end
