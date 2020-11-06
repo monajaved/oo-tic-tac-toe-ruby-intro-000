@@ -36,7 +36,59 @@ def position_taken?(index)
  end
 
 def valid_move?(index)
-     index.between?(0,8) && !position_taken?(index)
+  index.between?(0,8) && !position_taken?(index)
 end
 
+def turn_count
+  @board.count{|token| token == "X" || token == "O"}
+end
+
+def current_player
+  turn_count % 2 == 0 ? "X" : "O"
+end
+
+def turn
+  puts "Player #{current_player}, please enter a number 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  cp = current_player
+  if valid_move?(index)
+    move(index, cp)
+    display_board
+  else
+    turn
+  end
+end
+
+def over?
+  won? || draw?
+end
+
+def won?
+  a = WIN_COMBINATIONS.find{
+    |combo|
+    @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
+  }
+  b = WIN_COMBINATIONS.find{
+    |combo|
+    @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
+  }
+  return a || b
+end
+
+def draw?
+  !won? && full?
+end
+
+def full?
+  !@board.any?{|x| x == "" || x == " "}
+end
+
+def winner
+  if won?
+    @board[won?[0]] == "X" ? "X" : "O"
+  else
+    nil
+  end
+end
 end
