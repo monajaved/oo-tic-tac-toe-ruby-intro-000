@@ -91,4 +91,12 @@ def winner
   end
 end
 
+def play
+  turn
+  over?
+  current_player
+  
+
+end
+
 end
