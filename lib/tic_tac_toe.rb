@@ -96,12 +96,12 @@ def play
   # Play until someone wins or there is a draw
   turn until over?
 
-  if won? == true 
+  if won? == true
     if winner == "X"
       puts "Congratulations X"
     else winner == "O"
       puts "Congratulations O"
-    elsif draw == true 
+    elsif draw == true
       puts "Cat's Game!"
 
 
