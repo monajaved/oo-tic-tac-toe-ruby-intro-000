@@ -98,7 +98,7 @@ def play
   end
   if won?
       winner == "X" || winner == "O"
-      puts "Congratulations #{winner}!" 
+      puts "Congratulations #{winner}!"
    elsif draw?(board)
       puts "Cat's Game!"
    end
