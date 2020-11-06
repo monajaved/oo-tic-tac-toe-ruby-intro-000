@@ -96,7 +96,13 @@ def play
   # Play until someone wins or there is a draw
   turn until over?
 
-  won? ? puts("Congratulations #{winner}!") : puts("Cat's Game!")
+  if won? == true 
+    if winner == "X"
+      puts "Congratulations X"
+    else winner == "O"
+      puts "Congratulations O"
+    elsif draw == true 
+      puts "Cat's Game!"
 
 
 end
