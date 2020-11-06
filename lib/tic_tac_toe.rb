@@ -92,16 +92,16 @@ def winner
 end
 
 def play
-  
+
   until over?
     turn
   end
   if won?
-      winner == "X" || winner == "O" 
+      winner == "X" || winner == "O"
       puts "Congratulations #{winner}!" 
    elsif draw?(board)
-      puts "Cats Game!" 
-   end 
+      puts "Cats Game!"
+   end
 end
 
 end
