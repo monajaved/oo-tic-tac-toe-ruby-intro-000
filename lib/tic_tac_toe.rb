@@ -92,23 +92,16 @@ def winner
 end
 
 def play
-  @board = Array.new(9, " ")
-  # Play until someone wins or there is a draw
-  turn until over?
-
-  if won? == true
-    if winner == "X"
-      puts "Congratulations X"
-    else winner == "O"
-      puts "Congratulations O"
-    end
-  if draw? == true
-      puts "Cat's Game!"
-    end
+  
+  until over?
+    turn
   end
-
-
-
+  if won?
+      winner == "X" || winner == "O" 
+      puts "Congratulations #{winner}!" 
+   elsif draw?(board)
+      puts "Cats Game!" 
+   end 
 end
 
 end
