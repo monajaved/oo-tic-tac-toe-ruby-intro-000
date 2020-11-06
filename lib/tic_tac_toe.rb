@@ -89,5 +89,6 @@ def winner
   else
     nil
   end
+end
 
 end
