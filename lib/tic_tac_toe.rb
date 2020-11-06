@@ -1,4 +1,5 @@
 class TicTacToe
+  
   def initialize
     @board = board || Array.new(9, " ")
   end
@@ -13,6 +14,7 @@ WIN_COMBINATIONS = [
   [0,4,8],  # Diagnol 1
   [2,4,6]  # Diagnol 2
 ]
+
 def display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
@@ -23,4 +25,6 @@ end
 
 def input_to_index (num)
   num.to_i - 1
+end
+
 end
