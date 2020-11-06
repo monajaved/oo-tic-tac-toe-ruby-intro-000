@@ -92,11 +92,15 @@ def winner
 end
 
 def play
-  turn
-  over?
-  current_player
-  
+  @board = Array.new(9, " ")
+  # Play until someone wins or there is a draw
+  turn until over?
 
+  won? ? puts("Congratulations #{winner}!") : puts("Cat's Game!")
+
+  puts "Would you like to play again? (Y or N)"
+  
+  gets.strip.downcase == "y" || gets.strip.downcase == "yes" ? play : puts("Goodbye!")
 end
 
 end
